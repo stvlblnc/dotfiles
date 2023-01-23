@@ -1,0 +1,9 @@
+umask 022
+
+export PATH=/Users/steve/Applications/bin:$PATH
+
+export EDITOR=nvim
+export PAGER="bat"
+# export INFOPATH=/users/steve/code/info:/comm/gnu/info
+
+export ZDOTDIR=/Users/steve/.config/zsh

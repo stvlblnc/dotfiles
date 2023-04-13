@@ -119,6 +119,8 @@ cmp.setup {
       return vim_item
     end,
   },
+  completion = {completeopt = "menu,menuone,noinsert,noselect"},
+  -- preselect = cmp.PreselectMode.None,
   sources = {
     { name = "conjure" },
     { name = "nvim_cmp" },

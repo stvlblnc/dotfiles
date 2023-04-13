@@ -16,7 +16,7 @@ if not lspconfig_status_ok then
    return
 end
 
-local mason_null_ls_ok, mason_null_ls = pcall(require, "mason")
+local mason_null_ls_ok, mason_null_ls = pcall(require, "mason-null-ls")
 if not mason_null_ls_ok then
   vim.notify("Error requiring mason-null-ls")
   return
@@ -36,7 +36,7 @@ mason.setup({
 })
 
 local servers = {
-   "sumneko_lua",
+   "lua_ls",
    "pyright"
 }
 mason_lspconfig.setup({

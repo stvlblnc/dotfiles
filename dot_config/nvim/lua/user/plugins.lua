@@ -105,11 +105,7 @@ return packer.startup(function(use)
   use("radenling/vim-dispatch-neovim")
 
   -- Text Objects
-  use("Julian/vim-textobj-variable-segment")
-  use("kana/vim-textobj-entire")
-  use("kana/vim-textobj-line")
-  use("sgur/vim-textobj-parameter")
-  use("kana/vim-textobj-user")
+  use("chrisgrieser/nvim-various-textobjs")
 
   -- QOL
   use("christoomey/vim-sort-motion")
@@ -122,6 +118,7 @@ return packer.startup(function(use)
   use("szw/vim-maximizer")
   use("tpope/vim-unimpaired")
   use("vim-scripts/ReplaceWithRegister")
+  use("rebelot/terminal.nvim")
 
   -- utilities
   use("rktjmp/lush.nvim")

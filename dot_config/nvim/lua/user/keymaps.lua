@@ -7,15 +7,19 @@ vim.keymap.set('n', '<SPACE>', '<Nop>')
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-keymap("n", "<C-L>", [[:nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>]], opts)
+keymap("n", "<C-C>", [[:nohlsearch]], opts)
+-- keymap("n", "<C-C>", [[:nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>]], opts)
 
 keymap("i", "<C-U>", "<C-G>u<C-U>", opts)
 keymap("i", "<C-W>", "<C-G>u<C-W>", opts)
 
-keymap("t", "<F10>", [[<C-\><C-N>]], opts)
+keymap("t", [[<C-\><C-\>]], [[<C-\><C-N>]], opts)
+-- keymap("t", [[<C-H>]], [[<C-\><C-N>h]], opts)
+-- keymap("t", [[<C-J>]], [[<C-\><C-N>j]], opts)
+-- keymap("t", [[<C-K>]], [[<C-\><C-N>k]], opts)
+-- keymap("t", [[<C-L>]], [[<C-\><C-N>l]], opts)
 
 keymap("n", "<Leader>$", [[:s/\s\+$//e]], term_opts)
-keymap("n", "<C-c>", "<Esc>", term_opts)
 keymap("n", "<Leader>a", ":Ack!<Space>", opts)
 
 -- misc keymaps for plugins

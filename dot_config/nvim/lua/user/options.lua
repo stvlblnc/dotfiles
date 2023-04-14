@@ -39,9 +39,9 @@ opt.incsearch = true
 opt.complete:remove("i")
 opt.nrformats:remove("octal")
 
-opt.backupdir = "~/.vim/backup//"
-opt.directory = "~/.vim/swapfiles//"
-opt.undodir = "~/.vim/undodir"
+opt.backupdir = "/Users/steve/.vim/backup//"
+opt.directory = "/Users/steve/.vim/swapfiles//"
+opt.undodir = "/Users/steve/.vim/undodir"
 opt.undofile = true
 
 opt.scrolloff = 1

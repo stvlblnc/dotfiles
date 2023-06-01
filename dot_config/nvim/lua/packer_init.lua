@@ -35,6 +35,7 @@ return packer.startup(function(use)
   use 'morhetz/gruvbox'
   use 'rakr/vim-one'
   use 'sainnhe/gruvbox-material'
+  use 'Everblush/nvim'
 
   use 'nvim-lualine/lualine.nvim'
 

@@ -32,4 +32,6 @@ require('nightfox').setup({
    }
 })
 
-vim.cmd("colorscheme dayfox")
+-- require('everblush').setup()
+
+vim.cmd("colorscheme nightfox")

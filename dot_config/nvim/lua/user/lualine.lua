@@ -9,3 +9,9 @@ lualine.setup {
     theme = "dayfox"
     }
   }
+
+-- lualine.setup {
+--   options = {
+--     theme = "everblush"
+--   }
+-- }

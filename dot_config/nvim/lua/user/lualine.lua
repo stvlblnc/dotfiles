@@ -6,7 +6,7 @@ end
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = "dayfox"
+    theme = "nightfox"
     }
   }
 

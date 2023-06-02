@@ -34,6 +34,7 @@ return packer.startup(function(use)
   use("rakr/vim-one")
   use("sainnhe/gruvbox-material")
   use({"Everblush/nvim", as = 'everblush'})
+  use("sunjon/shade.nvim")
 
   -- status line
   use("nvim-lualine/lualine.nvim")

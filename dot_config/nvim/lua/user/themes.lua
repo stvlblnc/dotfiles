@@ -35,3 +35,7 @@ require('nightfox').setup({
 -- require('everblush').setup()
 
 vim.cmd("colorscheme nightfox")
+
+require('shade').setup{
+  overlay_opacity = 60 
+}

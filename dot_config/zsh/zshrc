@@ -36,6 +36,7 @@ zsh_add_file "zsh-prompt"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
+source ~/.config/zsh/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
 # zsh_add_completion "esc/conda-zsh-completion" false
@@ -75,3 +76,4 @@ compinit -C
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+eval "$(zoxide init --cmd cd zsh)"

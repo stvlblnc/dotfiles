@@ -13,5 +13,3 @@ setopt HIST_REDUCE_BLANKS
 # export PATH="$HOME/.local/bin":$PATH
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # export MANWIDTH=999
-
-eval "$(zoxide init --cmd j zsh)"

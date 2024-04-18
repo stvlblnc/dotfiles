@@ -29,6 +29,7 @@ case "$(uname -s)" in
    Darwin)
      # echo 'Mac OS X'
 	alias ls='ls -G'
+	alias ll='eza --color=always --long --git --no-filesize --icons=always'
      ;;
 
    Linux)

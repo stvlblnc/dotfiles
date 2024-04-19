@@ -30,6 +30,7 @@ case "$(uname -s)" in
      # echo 'Mac OS X'
 	alias ls='ls -G'
 	alias ll='eza --color=always --long --git --no-filesize --icons=always'
+        alias cd="z"
      ;;
 
    Linux)

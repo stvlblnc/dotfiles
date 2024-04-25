@@ -1,22 +1,53 @@
 [user]
-	name = Steve Leblanc
-	email = stvlblnc@gmail.com
+  name = Steve Leblanc
+  email = stvlblnc@gmail.com
+
 [core]
-	editor = nvim
-	excludesfile = /Users/steve/.gitignore_global
-	autocrlf = input
+  editor = nvim
+  excludesfile = /Users/steve/.gitignore_global
+  autocrlf = input
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  side-by-side = true
+
+[diff]
+  tool = meld
+  # tool = opendiff
+  colorMoved = default
+
+[difftool]
+  prompt = true
+
+[difftool "opendiff"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+
+[difftool "meld"]
+  cmd = meld \"$LOCAL\" \"$REMOTE\"
+
 [merge]
-	tool = opendiff
+  tool = meld
+  # tool = opendiff
+  conflictstyle = diff3
+
+[mergetool "meld"]
+  cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+  # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+
+[mergetool "opendiff"]
+  cmd = opendiff "$LOCAL" "$REMOTE" -ancestor \"$BASE\" -merge "$MERGED"
+  # cmd = opendiff "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+  trustExitCode = true
+
 [alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Users/steve/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain

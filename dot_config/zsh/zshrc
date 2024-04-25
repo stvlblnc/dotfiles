@@ -64,13 +64,13 @@ bindkey -r "^d"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
 export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba5f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :100 {}'"
-export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :200 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always  {} | head -200'"
 
 _fzf_compgen_path() {
@@ -87,6 +87,7 @@ _fzf_comprun() {
 
   case "$command" in
     cd) fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    z) fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
     export|unset) fzf --preview "eval 'echo \$' {}" "$@" ;;
     ssh) fzf --preview 'dig {}' "$@" ;;
     *) fzf --preview "--preview 'bat -n --color=always --line-range :200 {};'" "$@" ;;

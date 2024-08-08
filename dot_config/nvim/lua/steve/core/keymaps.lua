@@ -1,6 +1,6 @@
 -- for conciseness
 local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
+-- local term_opts = { silent = true }
 local keymap = vim.keymap
 
 keymap.set("n", "<SPACE>", "<Nop>")
@@ -13,15 +13,18 @@ keymap.set("n", "<C-C>", [[:nohlsearch<CR>]], opts, { desc = "Clear search highl
 keymap.set("i", "<C-U>", "<C-G>u<C-U>", opts)
 keymap.set("i", "<C-W>", "<C-G>u<C-W>", opts)
 
+-- open the file manager
+keymap.set("n", "<leader>oo", "<CMD>Oil<CR>", { desc = "Split window vertically" })
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
-keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
+keymap.set("n", "<leader>sx", "<CMD>close<CR>", { desc = "Close current split" })
 
 -- tab management
-keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open a new tab" })
-keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close the current tab" })
-keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to the next tab" })
-keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to the previous tab" })
-keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open the current buffer in a new tab" })
+keymap.set("n", "<leader>to", "<CMD>tabnew<CR>", { desc = "Open a new tab" })
+keymap.set("n", "<leader>tx", "<CMD>tabclose<CR>", { desc = "Close the current tab" })
+keymap.set("n", "<leader>tn", "<CMD>tabn<CR>", { desc = "Go to the next tab" })
+keymap.set("n", "<leader>tp", "<CMD>tabp<CR>", { desc = "Go to the previous tab" })
+keymap.set("n", "<leader>tf", "<CMD>tabnew %<CR>", { desc = "Open the current buffer in a new tab" })

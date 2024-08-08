@@ -45,7 +45,7 @@ opt.backspace = { "indent", "eol", "start" }
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
--- make a dash part of a word
+-- make a dash part of a word - good for lisps
 opt.iskeyword:append("-")
 
 opt.complete:remove("i")

@@ -35,7 +35,6 @@ return {
         "tmux",
         "toml",
         "vim",
-        "vimdoc",
         "yaml",
       },
       incremental_selection = {

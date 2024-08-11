@@ -24,4 +24,7 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
   end,
+
+  -- open the file manager
+  vim.keymap.set("n", "<leader>oo", "<CMD>Oil<CR>", { desc = "Open the Oil file manager" }),
 }

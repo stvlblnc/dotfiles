@@ -2,7 +2,7 @@ return {
   "nvim-treesitter/nvim-treesitter-textobjects",
   lazy = true,
   config = function()
-    require("nvim-treesitter-textobjects").setup({
+    require("nvim-treesitter.configs").setup({
       textobjects = {
         select = {
           enable = true,
@@ -20,8 +20,8 @@ return {
             ["aa"] = { query = "@parameter.outer", desc = "Select outer part of a parameter/argument" },
             ["ia"] = { query = "@parameter.inner", desc = "Select inner part of a parameter/argument" },
 
-            ["ac"] = { query = "@conditional.outer", desc = "Select outer part of a conditional" },
-            ["ic"] = { query = "@conditional.inner", desc = "Select inner part of a conditional" },
+            ["ai"] = { query = "@conditional.outer", desc = "Select outer part of a conditional" },
+            ["ii"] = { query = "@conditional.inner", desc = "Select inner part of a conditional" },
 
             ["al"] = { query = "@loop.outer", desc = "Select outer part of a loop" },
             ["il"] = { query = "@loop.inner", desc = "Select inner part of a loop" },
@@ -38,6 +38,14 @@ return {
         },
         swap = {
           enable = false,
+          swap_next = {
+            ["<leader>na"] = "@parameter.inner", -- swap parameter/argument with the next
+            ["<leader>nm"] = "@function.outer", -- swap function with the next
+          },
+          swap_previous = {
+            ["<leader>pa"] = "@parameter.inner", -- swap parameter/argument with the previous
+            ["<leader>pm"] = "@function.outer", -- swap function with the previous
+          },
         },
         move = {
           enable = true,
@@ -74,16 +82,15 @@ return {
       },
     })
 
-    -- local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
+    local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
+    -- vim way: ; goes in the direction you were moving
+    vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
+    vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)
 
-    -- -- vim way: ; goes in the direction you were moving
-    -- vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
-    -- vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)
-    --
-    -- -- Optionally, make builtin f, F, t, T also repeatable with ; and ,
-    -- vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f)
-    -- vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
-    -- vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
-    -- vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
+    -- Make builtin f, F, t, T also repeatable with ; and ,
+    vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f)
+    vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
+    vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
+    vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
   end,
 }

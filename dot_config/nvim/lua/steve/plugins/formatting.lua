@@ -1,19 +1,19 @@
 return {
   "stevearc/conform.nvim",
-  lazy = true,
-  event = { "BufReadPre", "BufNewFile" }, -- to disable comment this out
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
     local conform = require("conform")
 
     conform.setup({
       formatters_by_ft = {
-        sh = { "shfmt" },
         -- cpp = { "astyle" },
         cpp = { "clang-format" },
         clj = { "cljstyle" },
         lua = { "stylua" },
         python = { "isort", "black" },
         rust = { "rustfmt" },
+        go = { "gofmt" },
+        sh = { "shfmt" },
         json = { "prettier" },
         toml = { "taplo" },
         yaml = { "prettier" },

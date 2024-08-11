@@ -26,14 +26,17 @@ return {
           luasnip.lsp_expand(args.body)
         end,
       },
+
+      -- sources for autocopletions
       sources = {
         -- { name = "conjure" },
-        { name = "nvim_cmp" },
+        { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
-        -- { name = "nvim_lua" },
       },
+
+      -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         format = lspkind.cmp_format({
           mode = "symbol",
@@ -41,6 +44,7 @@ return {
           ellipsis_char = "...",
         }),
       },
+
       mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),

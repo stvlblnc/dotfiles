@@ -26,6 +26,7 @@ return {
         "cpp",
         "fennel",
         "gitignore",
+        "go",
         "janet_simple",
         "json",
         "lua",
@@ -36,6 +37,7 @@ return {
         "toml",
         "vim",
         "yaml",
+        "zig",
       },
       incremental_selection = {
         enable = true,

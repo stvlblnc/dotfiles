@@ -13,7 +13,7 @@ return {
       },
       options = {
         icons_enabled = true,
-        theme = "nightfox",
+        theme = "catppuccin",
       },
       sections = {
         lualine_x = {

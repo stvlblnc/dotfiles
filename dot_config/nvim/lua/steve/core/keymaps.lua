@@ -22,10 +22,4 @@ keymap.set("n", "<leader>sx", "<CMD>close<CR>", { desc = "Close current split" }
 -- tab management
 keymap.set("n", "<leader>to", "<CMD>tabnew<CR>", { desc = "Open a new tab" })
 keymap.set("n", "<leader>tx", "<CMD>tabclose<CR>", { desc = "Close the current tab" })
-keymap.set("n", "<leader>tn", "<CMD>tabn<CR>", { desc = "Go to the next tab" })
-keymap.set("n", "<leader>tp", "<CMD>tabp<CR>", { desc = "Go to the previous tab" })
 keymap.set("n", "<leader>tf", "<CMD>tabnew %<CR>", { desc = "Open the current buffer in a new tab" })
-
--- missing from surround.lua
-keymap.set("n", "[<SPACE>", "O<ESC>", { desc = "Add a blank line above the current one" })
-keymap.set("n", "]<SPACE>", "o<ESC>", { desc = "Add a blank line above the current one" })

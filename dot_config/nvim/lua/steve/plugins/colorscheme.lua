@@ -27,9 +27,21 @@ return {
     local catppuccin = require("catppuccin")
     catppuccin.setup({
       flavor = "macchiato", -- latte, frappe, macchiato, mocha
+
       background = {
         light = "latte",
         dark = "macchiato",
+      },
+
+      integrations = {
+        gitsigns = true,
+        mason = true,
+        telescope = {
+          enabled = true,
+          -- style = "nvchad"
+        },
+        gitgutter = true,
+        which_key = true,
       },
     })
 

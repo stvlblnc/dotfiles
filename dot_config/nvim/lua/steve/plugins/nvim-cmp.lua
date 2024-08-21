@@ -8,6 +8,7 @@ return {
     "saadparwaiz1/cmp_luasnip", -- for autocompletions
     "rafamadriz/friendly-snippets", -- useful snippets
     "onsails/lspkind.nvim", -- vs-code like pictograms
+    "PaterJason/cmp-conjure", -- add Conjure as a source
   },
   config = function()
     local cmp = require("cmp")
@@ -29,7 +30,7 @@ return {
 
       -- sources for autocopletions
       sources = {
-        -- { name = "conjure" },
+        { name = "conjure" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },

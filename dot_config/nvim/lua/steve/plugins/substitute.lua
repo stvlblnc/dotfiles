@@ -19,9 +19,9 @@ return {
     keymap.set("x", "<Leader>s", range.visual, { noremap = true, desc = "Substitute line" })
     keymap.set("n", "<Leader>ss", range.word, { noremap = true, desc = "Substitute to end of line" })
 
-    keymap.set("n", "<Leader>sx", exchange.operator, { noremap = true, desc = "Exchange with a motion" })
-    keymap.set("n", "<Leader>sxx", exchange.line, { noremap = true, desc = "Exchange line" })
-    keymap.set("x", "<Leader>X", exchange.visual, { noremap = true, desc = "Exchange in visual mode" })
-    keymap.set("n", "<Leader>sxc", exchange.clear, { noremap = true, desc = "Clear exchange selection" })
+    -- keymap.set("n", "<Leader>sx", exchange.operator, { noremap = true, desc = "Exchange with a motion" })
+    -- keymap.set("n", "<Leader>sxx", exchange.line, { noremap = true, desc = "Exchange line" })
+    -- keymap.set("x", "<Leader>X", exchange.visual, { noremap = true, desc = "Exchange in visual mode" })
+    -- keymap.set("n", "<Leader>sxc", exchange.clear, { noremap = true, desc = "Clear exchange selection" })
   end,
 }

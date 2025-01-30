@@ -50,7 +50,7 @@ return {
     {
       "<leader>gB",
       function()
-        Snacks.git.browse()
+        Snacks.gitbrowse()
       end,
       desc = "Git browse",
     },
